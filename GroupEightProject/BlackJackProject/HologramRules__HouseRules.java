@@ -1,5 +1,6 @@
-public class HologramRules__HouseRules extends _HouseRules {
+public class HologramRules extends HouseRules {
 
+	@Override
 	public boolean shouldHit(Hand aHand) {
 		throw new UnsupportedOperationException();
 	}
