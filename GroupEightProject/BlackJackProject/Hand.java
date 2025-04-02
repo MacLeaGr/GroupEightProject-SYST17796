@@ -1,14 +1,14 @@
 import java.util.List;
 
 public class Hand {
-	private List<Card> _cards;
+	private List<Card> cards;
 
 	public Hand() {
 		throw new UnsupportedOperationException();
 	}
 
 	public List<Card> getCards() {
-		return this._cards;
+		return this.cards;
 	}
 
 	public void addCard(Card card) {
