@@ -1,7 +1,7 @@
 public class Deck {
 	private List<Card> _cards;
-	public Game _unnamed_Game_;
-	public Card ;
+	
+	
 
 	public Deck() {
 		throw new UnsupportedOperationException();
@@ -15,7 +15,7 @@ public class Deck {
 		throw new UnsupportedOperationException();
 	}
 
-	public Card drawCardd() {
+	public Card drawCard() {
 		throw new UnsupportedOperationException();
 	}
 
