@@ -1,14 +1,14 @@
 public class Player {
-	private String _name;
-	private int _score;
-	private Hand _hand;
+	private String name;
+	private int score;
+	private Hand hand;
 
 	public String getName() {
-		return this._name;
+		return this.name;
 	}
 
 	public int getScore() {
-		return this._score;
+		return this.score;
 	}
 
 	public void stand() {
