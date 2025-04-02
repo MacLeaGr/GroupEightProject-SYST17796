@@ -1,7 +1,7 @@
 public class Card {
-	private String _suit;
-	private String _rank;
-	private int _value;
+	private String suit;
+	private String rank;
+	private int value;
 	
 
 	public Card(String aSuit, String aRank, int aValue) {
@@ -9,15 +9,15 @@ public class Card {
 	}
 
 	public String getSuit() {
-		return this._suit;
+		return this.suit;
 	}
 
 	public String getRank() {
-		return this._rank;
+		return this.rank;
 	}
 
 	public int getValue() {
-		return this._value;
+		return this.value;
 	}
 
 	public boolean isAce() {
