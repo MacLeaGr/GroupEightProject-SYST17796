@@ -2,10 +2,10 @@ import java.util.List;
 import java.util.Vector;
 
 public class Game {
-	private List<Player> _players;
-	private Deck _deck;
-	private Dealer _dealer;
-	private Vector<Round> _rounds = new Vector<>();
+	private List<Player> players;
+	private Deck deck;
+	private Dealer dealer;
+	private Vector<Round> rounds = new Vector<>();
 
 	public Game() {
 		throw new UnsupportedOperationException();
