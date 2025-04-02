@@ -1,5 +1,5 @@
 public class Dealer extends Player {
-	private HouseRules _houseRules;
+	private HouseRules houseRules;
 	
 
 	public Dealer(HouseRules aHouseRules) {
