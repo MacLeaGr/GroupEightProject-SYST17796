@@ -1,15 +1,14 @@
 public class Round {
-	private Player _players;
+	private Player _player;
 	private Dealer _dealer;
 	private Deck _deck;
 	private int _roundNumber;
-	public Game _unnamed_Game_;
 
-	public Round(Player aPlayers, Dealer aDealer, Deck aDeck) {
+	public Round(Player aPlayer, Dealer aDealer, Deck aDeck) {
 		throw new UnsupportedOperationException();
 	}
 
-	public void starRound() {
+	public void startRound() {
 		throw new UnsupportedOperationException();
 	}
 
