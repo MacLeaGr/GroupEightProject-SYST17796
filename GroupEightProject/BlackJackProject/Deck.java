@@ -1,5 +1,5 @@
 public class Deck {
-	private List<Card> _cards;
+	private List<Card> cards;
 	
 	
 
@@ -8,7 +8,7 @@ public class Deck {
 	}
 
 	public List<Card> getCards() {
-		return this._cards;
+		return this.cards;
 	}
 
 	public void shuffle() {
