@@ -1,8 +1,8 @@
 public class Round {
-	private Player _player;
-	private Dealer _dealer;
-	private Deck _deck;
-	private int _roundNumber;
+	private Player player;
+	private Dealer dealer;
+	private Deck deck;
+	private int roundNumber;
 
 	public Round(Player aPlayer, Dealer aDealer, Deck aDeck) {
 		throw new UnsupportedOperationException();
