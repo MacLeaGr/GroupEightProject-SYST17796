@@ -1,9 +1,7 @@
-import java.util.Vector;
+import java.util.List;
 
 public class Hand {
 	private List<Card> _cards;
-	public Player _unnamed_Player_28;
-	public Vector<Card> _unnamed_Card_ = new Vector<Card>();
 
 	public Hand() {
 		throw new UnsupportedOperationException();
@@ -13,7 +11,7 @@ public class Hand {
 		return this._cards;
 	}
 
-	public void addCard(Object aCard_card) {
+	public void addCard(Card card) {
 		throw new UnsupportedOperationException();
 	}
 
