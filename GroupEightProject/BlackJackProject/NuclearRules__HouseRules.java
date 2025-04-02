@@ -1,5 +1,6 @@
-public class NuclearRules__HouseRules extends _HouseRules {
+public class NuclearRules extends HouseRules {
 
+	@Override
 	public boolean shouldHit(Hand aHand) {
 		throw new UnsupportedOperationException();
 	}
