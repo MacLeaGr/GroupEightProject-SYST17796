@@ -1,7 +1,4 @@
-public class _HouseRules {
-	public Dealer _unnamed_Dealer_;
+public abstract class HouseRules {
 
-	public boolean shouldHit(Hand aHand) {
-		throw new UnsupportedOperationException();
-	}
+	public abstract boolean shouldHit(Hand aHand);
 }
