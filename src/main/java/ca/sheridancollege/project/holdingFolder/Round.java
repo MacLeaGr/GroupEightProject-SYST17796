@@ -1,7 +1,9 @@
+import ca.sheridancollege.project.Deck;
+
 public class Round {
     private HumanPlayer player;
-    private Dealer dealer;
-    private Deck deck;
+    private Dealer dealer = new Dealer();
+    private Deck deck = new Deck();
     private int roundNumber;
 
     public Round(HumanPlayer player, Dealer dealer, Deck deck) 
@@ -13,6 +15,7 @@ public class Round {
 
     public void startRound() 
     {
+        System.out.println("Round Number " + roundNumber);
         System.out.println("Dealing cards!!");
 
         player.getHand().addCard(deck.drawCard());
@@ -30,6 +33,7 @@ public class Round {
         }
 
         printResult();
+        roundNumber++;
     }
 
     // Get the final scores of player and dealer
