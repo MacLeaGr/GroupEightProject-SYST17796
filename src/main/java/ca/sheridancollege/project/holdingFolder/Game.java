@@ -42,7 +42,7 @@ public class Game{
 
     public void printScore()
     {
-        System.out.println(player.getName() + " has: " + player.getScore());
-        System.out.println("Dealer has: " + dealer.getScore());
+        System.out.println(player.getName() + " has: " + player.getHandValue());
+        System.out.println("Dealer has: " + dealer.getHandValue());
     }
 }

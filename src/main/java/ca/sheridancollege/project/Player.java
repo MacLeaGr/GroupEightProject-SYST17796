@@ -1,6 +1,7 @@
 package ca.sheridancollege.project;
 
 import ca.sheridancollege.project.Hand;
+
 public class Player {
 	private String name;
 	private int score;
@@ -10,11 +11,22 @@ public class Player {
         {
 		return this.name;
 	}
+        
+        public void setName()
+        {
+            // user inputs name
+            
+        }
 
-	public int getScore()
+	public int getHandValue()
         {
             return this.score;
 	}
+        
+        public void setHandValue
+        {
+            
+        }
 
 	public void stand()
         {
@@ -23,7 +35,7 @@ public class Player {
 
 	public void hit()
         {
-		throw new UnsupportedOperationException();
+            player.getHand().addCard(deck.drawCard());
 	}
 
 	public void doubleDown()

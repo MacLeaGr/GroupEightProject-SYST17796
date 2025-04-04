@@ -35,8 +35,8 @@ public class Round {
     // Get the final scores of player and dealer
     public void printResult() 
     {	
-        int playerScore = player.getHand().getScore();
-        int dealerScore = dealer.getHand().getScore();
+        int playerHandValue = player.getHand().getHandValue();
+        int dealerHandValue = dealer.getHand().getHandValue();
 
         if (player.getHand().isBust())
         {
@@ -46,21 +46,17 @@ public class Round {
         {
             System.out.println("Dealer busts! Player wins.");
 	}
-        else if (playerScore > dealerScore)
+        else if (playerHandValue > dealerHandValue)
         {
-            System.out.println("Player wins with " + playerScore);
+            System.out.println("Player wins with " + playerHandValue);
 	}
-        else if (dealerScore > playerScore)
+        else if (dealerHandValue > playerHandValue)
         {
-            System.out.println("Dealer wins with " + dealerScore);
+            System.out.println("Dealer wins with " + dealerHandValue);
 	}
         else
         {
             System.out.println("It's a tie!");
         }
     }
-
-
-
-
 }

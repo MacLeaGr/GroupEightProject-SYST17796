@@ -4,18 +4,18 @@ import java.util.List;
 import java.util.Vector;
 
 public class Game {
-	private List<Player> players;
-	private Deck deck;
-	private Dealer dealer;
-	private Vector<Round> rounds = new Vector<>();
+private List<Player> players;
+private Deck deck;
+private Dealer dealer;
+private Vector<Round> rounds = new Vector<>();
 
-	public Game() {
-		throw new UnsupportedOperationException();
-	}
+public Game() {
+	throw new UnsupportedOperationException();
+}
 
-	public void startGame() {
-		throw new UnsupportedOperationException();
-	}
+public void startGame() {
+	throw new UnsupportedOperationException();
+}
 
 	public void playRound() {
 		throw new UnsupportedOperationException();
@@ -32,4 +32,9 @@ public class Game {
 	public void printScore(Player aPlayer) {
 		throw new UnsupportedOperationException();
 	}
+        
+        public static void main(String[] args)
+    {
+        System.out.println("Hello World!");
+    }
 }

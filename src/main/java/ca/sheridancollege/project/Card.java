@@ -3,6 +3,7 @@ package ca.sheridancollege.project;
 public class Card {
 	private String suit;
 	private String value;
+        private int numValue;
         private boolean ace;
         
         private enum Suit {CLUBS, DIAMONDS, HEARTS, SPADES}; // enum for all possible suits
@@ -15,6 +16,43 @@ public class Card {
             
             int valueNum = (int)(Math.random() * 13); // generate random number between 0 - 12
             this.value = setValue(valueNum); // set card value to randomly generated value
+            
+            switch(value)
+            {
+                case "ACE":
+                    numValue = 0;
+                    break;
+                case "TWO":
+                    numValue = 2;
+                    break;
+                case "THREE":
+                    numValue = 3;
+                    break;
+                case "FOUR":
+                    numValue = 4;
+                    break;
+                case "FIVE":
+                    numValue = 5;
+                    break;
+                case "IX":
+                    numValue = 6;
+                    break;
+                case "SEVEN":
+                    numValue = 7;
+                    break;
+                case "EIGHT":
+                    numValue = 8;
+                    break;
+                case "NINE":
+                    numValue = 9;
+                    break;
+                case "TEN":
+                case "JACK":
+                case "QUEEN":
+                case "KING":
+                    numValue = 10;
+                    break;
+            }
             
             this.ace = "ACE".equals(this.value); // set boolen "ace" to true or false
 	}
@@ -39,6 +77,11 @@ public class Card {
         {
             Value value = Value.values()[num];
             return value.toString();
+        }
+        
+        public int getNumValue()
+        {
+            return this.numValue;
         }
         
 	public boolean isAce()
