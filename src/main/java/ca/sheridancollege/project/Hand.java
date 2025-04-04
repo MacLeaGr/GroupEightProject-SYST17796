@@ -1,6 +1,7 @@
 package ca.sheridancollege.project;
 
 import java.util.List;
+import ca.sheridancollege.project.Deck;
 
 public class Hand {
 	private List<Card> cards;
@@ -21,6 +22,13 @@ public class Hand {
         {
             cards.add(card);
 	}
+        
+        public Card removeCard(int location) // remove card for split
+        {
+            Card tempCard = cards.get(location);
+            cards.remove(location);
+            return tempCard;
+        }
 
 	public int getHandValue() // calculates value of cards in hand
         {
@@ -62,11 +70,6 @@ public class Hand {
             }
 	}
 
-	public void clearHand() // empty hand after win or bust
-        {
-            cards.clear();
-	}
-
 	public boolean isBust() // check for greater than 21, return true or false
         {
             if(handValue >= 22)
@@ -77,5 +80,10 @@ public class Hand {
             {
                 return false;
             }
+	}
+        
+        public void clearHand() // empty hand after win or bust
+        {
+            cards.clear();
 	}
 }

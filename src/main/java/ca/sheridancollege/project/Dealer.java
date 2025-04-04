@@ -9,12 +9,12 @@ public class Dealer extends Player {
             throw new UnsupportedOperationException();
 	}
 
-	public void playTurn()
+	public void playTurn() // undefined as of yet
         {
             throw new UnsupportedOperationException();
 	}
 
-	public void revealCard()
+	public void revealCard() // dealer reveals facedown card to player
         {
             throw new UnsupportedOperationException();
 	}

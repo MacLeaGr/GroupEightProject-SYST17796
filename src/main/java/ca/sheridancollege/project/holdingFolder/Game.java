@@ -22,25 +22,25 @@ public class Game{
         deck.resetDeck();
     }
     
-    public void playRound() 
+    public void playRound() // initiates round for user to play
     {
         Round round = new Round(player, dealer, deck);
     	rounds.add(round);
     	round.startRound();
     }
 
-    public void resetGame() 
+    public void resetGame() // clears deck and number of rounds for next game
     {
         deck.resetDeck();
         rounds.clear();
     }
     
-    public void addPlayer(HumanPlayer player) 
+    public void addPlayer(HumanPlayer player) // imports player data to game class
     {
         this.player = player;
     }
 
-    public void printScore()
+    public void printScore() // prints at end of round to show card values to player
     {
         System.out.println(player.getName() + " has: " + player.getHandValue());
         System.out.println("Dealer has: " + dealer.getHandValue());

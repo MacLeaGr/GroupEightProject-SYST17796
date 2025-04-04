@@ -17,40 +17,40 @@ public class Card {
             int valueNum = (int)(Math.random() * 13); // generate random number between 0 - 12
             this.value = setValue(valueNum); // set card value to randomly generated value
             
-            switch(value)
+            switch(value) // switch statement to assign a integer value to each card generated
             {
                 case "ACE":
-                    numValue = 0;
+                    this.numValue = 0;
                     break;
                 case "TWO":
-                    numValue = 2;
+                    this.numValue = 2;
                     break;
                 case "THREE":
-                    numValue = 3;
+                    this.numValue = 3;
                     break;
                 case "FOUR":
-                    numValue = 4;
+                    this.numValue = 4;
                     break;
                 case "FIVE":
-                    numValue = 5;
+                    this.numValue = 5;
                     break;
                 case "IX":
-                    numValue = 6;
+                    this.numValue = 6;
                     break;
                 case "SEVEN":
-                    numValue = 7;
+                    this.numValue = 7;
                     break;
                 case "EIGHT":
-                    numValue = 8;
+                    this.numValue = 8;
                     break;
                 case "NINE":
-                    numValue = 9;
+                    this.numValue = 9;
                     break;
-                case "TEN":
+                case "TEN":     // TEN - KING will all have a value of 10, so that is reflected here
                 case "JACK":
                 case "QUEEN":
                 case "KING":
-                    numValue = 10;
+                    this.numValue = 10;
                     break;
             }
             
@@ -62,7 +62,7 @@ public class Card {
             return this.suit;
 	}
         
-        private String setSuit(int num)
+        private String setSuit(int num) // assign suit to blank card
         {
            Suit suit = Suit.values()[num];
            return suit.toString();
@@ -73,7 +73,7 @@ public class Card {
             return this.value;
 	}
         
-        private String setValue(int num)
+        private String setValue(int num) // assign value to blank card
         {
             Value value = Value.values()[num];
             return value.toString();

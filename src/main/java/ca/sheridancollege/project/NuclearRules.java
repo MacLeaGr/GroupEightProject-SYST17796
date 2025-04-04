@@ -1,6 +1,6 @@
 package ca.sheridancollege.project;
 
-public class NuclearRules extends HouseRules {
+public class NuclearRules extends HouseRules { // ruleset that modifies house rules, makes dealer act differently
 
 	@Override
 	public boolean shouldHit(Hand aHand) {
