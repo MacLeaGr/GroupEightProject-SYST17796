@@ -23,6 +23,7 @@ public class Card {
         {
             return this.suit;
 	}
+        
         private String setSuit(int num)
         {
            Suit suit = Suit.values()[num];
@@ -33,6 +34,7 @@ public class Card {
         {
             return this.value;
 	}
+        
         private String setValue(int num)
         {
             Value value = Value.values()[num];

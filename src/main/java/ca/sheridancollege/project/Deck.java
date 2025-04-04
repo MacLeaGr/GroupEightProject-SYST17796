@@ -3,7 +3,7 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Deck {
+public class Deck{
 	private List<Card> cards; // list of drawn cards
         
 	public Deck()
@@ -14,11 +14,6 @@ public class Deck {
 	public List<Card> getCards()
         {
             return this.cards;
-	}
-
-	public void shuffle()
-        {
-		throw new UnsupportedOperationException();
 	}
 
 	public Card drawCard() // called to generate a new card and validate that it has not already been drawn
@@ -45,8 +40,8 @@ public class Deck {
             return newCard;
 	}
 
-	public void resetDeck()
-        {
+	public void resetDeck() // in blackjack, shuffling and resetting the deck are functionally the same as a shuffle only happens at the end of a round,
+        {                       // therefore, shuffle has been removed
             cards.clear();
 	}
 }

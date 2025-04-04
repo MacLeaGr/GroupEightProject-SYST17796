@@ -6,31 +6,38 @@ public class Player {
 	private int score;
 	private Hand hand;
 
-	public String getName() {
+	public String getName()
+        {
 		return this.name;
 	}
 
-	public int getScore() {
-		return this.score;
+	public int getScore()
+        {
+            return this.score;
 	}
 
-	public void stand() {
+	public void stand()
+        {
 		throw new UnsupportedOperationException();
 	}
 
-	public void hit() {
+	public void hit()
+        {
 		throw new UnsupportedOperationException();
 	}
 
-	public void doubleDown() {
+	public void doubleDown()
+        {
 		throw new UnsupportedOperationException();
 	}
 
-	public void playTurn() {
+	public void playTurn()
+        {
 		throw new UnsupportedOperationException();
 	}
 
-	public void split() {
+	public void split()
+        {
 		throw new UnsupportedOperationException();
 	}
 }
