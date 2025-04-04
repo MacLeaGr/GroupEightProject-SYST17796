@@ -2,8 +2,8 @@ package ca.sheridancollege.project;
 
 public class Card {
 	private String suit;
-	private String value;
-        private int numValue;
+	private String value; // face value ("ACE, FIVE, KING etc.)
+        private int numValue; // number value ("6, 2, 10 etc.)
         private boolean ace;
         
         private enum Suit {CLUBS, DIAMONDS, HEARTS, SPADES}; // enum for all possible suits
