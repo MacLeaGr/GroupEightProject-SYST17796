@@ -1,28 +1,66 @@
-package ca.sheridancollege.project;
-
-import ca.sheridancollege.project.Dealer;
-import ca.sheridancollege.project.Deck;
-import ca.sheridancollege.project.Player;
-
 public class Round {
-	private Player player;
-	private Dealer dealer;
-	private Deck deck;
-	private int roundNumber;
+    private HumanPlayer player;
+    private Dealer dealer;
+    private Deck deck;
+    private int roundNumber;
 
-	public Round(Player aPlayer, Dealer aDealer, Deck aDeck) {
-		throw new UnsupportedOperationException();
-	}
+    public Round(HumanPlayer player, Dealer dealer, Deck deck) 
+	{
+        this.player = player;
+        this.dealer = dealer;
+        this.deck = deck;
+    }
 
-	public void startRound() {
-		throw new UnsupportedOperationException();
-	}
+    public void startRound() 
+	{
 
-	public void nextTurn() {
-		throw new UnsupportedOperationException();
-	}
+        System.out.println("Dealing cards!!");
 
-	public Player getWinner() {
-		throw new UnsupportedOperationException();
-	}
+        
+        player.getHand().addCard(deck.drawCard());
+        player.getHand().addCard(deck.drawCard());
+
+        dealer.getHand().addCard(deck.drawCard());
+        dealer.getHand().addCard(deck.drawCard());
+
+        
+        player.playTurn(deck);
+
+        // If player hasn't busted, dealer plays
+        if (!player.getHand().isBust()) {
+            dealer.playTurn();
+        }
+
+        printResult();
+    }
+
+	// Getvscores of player and dealer for one round
+    public void printRoundResult() 
+	{
+		
+        int playerScore = player.getHand().getHandV();
+		
+        int dealerScore = dealer.getHand().getHandValue();
+
+        if (player.getHand().isBust()) {
+            System.out.println("Player busts! Dealer wins.");
+        
+		} else if (dealer.getHand().isBust()) {
+            System.out.println("Dealer busts! Player wins.");
+        
+		} else if (playerScore > dealerScore) {
+            System.out.println("Player wins with " + playerScore);
+        
+		} else if (dealerScore > playerScore) {
+            System.out.println("Dealer wins with " + dealerScore);
+        
+		} else {
+        
+			System.out.println("It's a tie!");
+        }
+    }
+
+
+
+
 }
