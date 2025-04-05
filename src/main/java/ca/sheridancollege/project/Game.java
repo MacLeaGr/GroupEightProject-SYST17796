@@ -1,40 +1,46 @@
-package ca.sheridancollege.project;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class Game {
-private List<Player> players;
-private Deck deck;
-private Dealer dealer;
-private Vector<Round> rounds = new Vector<>();
+    private HumanPlayer player;
+    private Deck deck;
+    private Dealer dealer;
+    private List<Round> rounds;
 
-public Game() {
-	throw new UnsupportedOperationException();
+
+public Game(Dealer dealer, HumanPlayer player) 
+{
+this.dealer = dealer;
+this.player = player;
+this.deck = new Deck();
+this.rounds = new ArrayList<>();
+}
+	
+public void startGame()
+{
+System.out.println("Starting The Game!!");
+deck.resetDeck();
+deck.shuffle();
 }
 
-public void startGame() {
-	throw new UnsupportedOperationException();
+public void playRound() 
+{
+Round round = new Round(player, dealer, deck);
+rounds.add(round);
+round.startRound();
 }
 
-	public void playRound() {
-		throw new UnsupportedOperationException();
-	}
+public void resetGame() 
+{
+deck.resetDeck();
+rounds.clear();
+}
 
-	public void resetGame() {
-		throw new UnsupportedOperationException();
-	}
+public void addPlayer(HumanPlayer player) 
+{
+this.player = player;
+}
 
-	public void addPlayer(Player aPlayer) {
-		throw new UnsupportedOperationException();
-	}
-
-	public void printScore(Player aPlayer) {
-		throw new UnsupportedOperationException();
-	}
-        
-        public static void main(String[] args)
-    {
-        System.out.println("Hello World!");
-    }
+    
+	
 }
