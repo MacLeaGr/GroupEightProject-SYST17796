@@ -1,0 +1,86 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Hand {
+
+    private List<Card> cards;
+
+ 
+    public Hand() {
+        this.cards = new ArrayList<>();
+    }
+
+    public void addCard(Card card) {
+        cards.add(card);
+    }
+
+   
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    // Calculates score of the hand    
+    public int getHandScore() {
+        int total = 0;
+        int aceCount = 0;
+
+        		for (Card card : cards) {
+            
+					String value = card.getValue();
+
+            		if (value.equals("ACE")) {
+                		total += 11;     // Count ace as 11 for now
+                		aceCount++;      // how many aces are in the hand
+            		
+                    } else if (value.equals("TWO")) total += 2;
+
+                    else if (value.equals("THREE")) total += 3;
+            		
+                    else if (value.equals("FOUR")) total += 4;
+            		
+                    else if (value.equals("FIVE")) total += 5;
+            		
+                    else if (value.equals("SIX")) total += 6;
+            		
+                    else if (value.equals("SEVEN")) total += 7;
+            		
+                    else if (value.equals("EIGHT")) total += 8;
+            		
+                    else if (value.equals("NINE")) total += 9;
+					  
+            		else total += 10;   // For TEN, JACK, QUEEN, KING
+        	}
+
+        		
+        		while (total > 21 && aceCount > 0) { // If total is over 21 and player/dealer havetwo or more ace, convert them from 11 to 1
+            	total -= 10;  // Change one ACE from 11 to 1
+            	aceCount--;   
+        }
+
+        return total;
+    }
+
+    public boolean isBust() {
+        return getScore() > 21;
+    }
+
+    	public boolean isBlackJack() 
+        {
+            if(handValue == 21)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+	}
+
+
+    
+    public void clearHand() {
+        cards.clear();
+    }
+
+    
+}
