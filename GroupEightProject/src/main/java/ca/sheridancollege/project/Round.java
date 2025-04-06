@@ -32,8 +32,9 @@ public class Round {
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
         {
-	    Card dealerSecondCard = dealer.getHand().getCards().get(1); // get second card dealer drew
+            Card dealerSecondCard = dealer.getHand().getCards().get(1); // get second card dealer drew
             System.out.println("Dealer reveals second card, " + dealerSecondCard.getValue() + " of " + dealerSecondCard.getSuit());
+            System.out.println("Dealer Hand Value = " + dealer.hand.getHandValue());
             dealer.playTurn(deck);
         }
 
