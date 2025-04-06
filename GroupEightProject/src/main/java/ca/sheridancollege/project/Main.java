@@ -39,11 +39,13 @@ public class Main{
         
         System.out.println("Group 8 BlackJack");
         System.out.println("Authors: Graham, Neo, Juan");
+        System.out.println(""); // Line break
         
         // player select, add new player or resume playing as a registered player, or quit
         System.out.println("Select an Option - New Player or Resume as returning player: ");
         System.out.println("Returning Players: " + names);
         System.out.println("Please type: NEW,  RESUME, or QUIT");
+        System.out.print(":"); // "Type here" indicator
         
         input = scanner.nextLine();
         input = input.trim().toLowerCase();
@@ -55,6 +57,7 @@ public class Main{
                 {
                     int count = 0;
                     System.out.println("Please enter a new Name:");
+                    System.out.print(":"); // "Type here" indicator
                     name = scanner.nextLine();
                     name = name.trim().toLowerCase();
                     
@@ -75,6 +78,7 @@ public class Main{
                     else
                     {
                         System.out.println("Name already exists, please enter a different name.");
+                        System.out.print(":"); // "Type here" indicator
                     }
                 }
                 
@@ -83,6 +87,7 @@ public class Main{
                 while(validName == false)
                 {
                     System.out.println("Please enter a new Name:");
+                    System.out.print(":"); // "Type here" indicator
                     name = scanner.nextLine();
                     name = name.trim().toLowerCase();
                     
@@ -105,6 +110,7 @@ public class Main{
                     break;
             default:
                 System.out.println("Please enter a valid input");
+                System.out.print(":"); // "Type here" indicator
         }
         
         // start game decision -- play, view wins, quit
@@ -112,6 +118,7 @@ public class Main{
         {
             System.out.println("Select an Option - Play, view wins, or quit: ");
             System.out.println("Please type: PLAY, VIEW, or QUIT");
+            System.out.print(":"); // "Type here" indicator
         
             input = scanner.nextLine();
             input = input.trim().toLowerCase();
@@ -136,6 +143,7 @@ public class Main{
                             game.playRound();
                             
                             System.out.println("Play Again? Please Enter YES or NO:"); // decision to end game loop and return to menu
+                            System.out.print(":"); // "Type here" indicator
                             input = scanner.nextLine();
                             input = input.trim().toLowerCase();
                             switch(input)
@@ -147,6 +155,7 @@ public class Main{
                                     break;
                                 default:
                                     System.out.println("Please enter a valid input");
+                                    System.out.print(":"); // "Type here" indicator
                             }
                         }
                     }
@@ -165,6 +174,7 @@ public class Main{
                     break;
                 default:
                     System.out.println("Please enter a valid input");
+                    System.out.print(":"); // "Type here" indicator
             }
         }
      scanner.close();    
