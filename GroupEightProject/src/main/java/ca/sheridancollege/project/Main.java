@@ -131,11 +131,11 @@ public class Main{
                         Game game = new Game(activePlayer);
                         game.startGame();
                     
-                    
-                        while(playAgain=="yes")
+                        while(playAgain=="yes") // game loop happens here
                         {
                             game.playRound();
-                            System.out.println("Play Again? Please Enter YES or NO:");
+                            
+                            System.out.println("Play Again? Please Enter YES or NO:"); // decision to end game loop and return to menu
                             input = scanner.nextLine();
                             input = input.trim().toLowerCase();
                             switch(input)
