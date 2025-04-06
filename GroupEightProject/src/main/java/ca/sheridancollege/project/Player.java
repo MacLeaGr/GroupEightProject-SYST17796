@@ -71,6 +71,7 @@ public class Player {
 
             while (!hand.isBust())
             {
+                System.out.println(name + "'s hand value is " + hand.getHandValue());
                 System.out.print(name + ", choose: hit / stand / double: ");
                 String action = scanner.nextLine();
 
