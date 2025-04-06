@@ -83,7 +83,6 @@ public class Main{
             case "resume": // if resume, select name from list, set player's wins to number connected to name in JSON
                 while(validName == false)
                 {
-                    int count = 0;
                     System.out.println("Please enter a new Name:");
                     name = scanner.nextLine();
                     name = name.trim().toLowerCase();
