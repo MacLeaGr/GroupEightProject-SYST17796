@@ -1,7 +1,6 @@
 package ca.sheridancollege.project;
 
 import java.util.Scanner;
-import ca.sheridancollege.project.Game;
 import java.io.IOException;
 import java.io.InputStream;
 
