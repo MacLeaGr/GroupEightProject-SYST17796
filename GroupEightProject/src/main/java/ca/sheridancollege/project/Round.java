@@ -22,12 +22,18 @@ public class Round {
 
         dealer.getHand().addCard(deck.drawCard());
         dealer.getHand().addCard(deck.drawCard());
+        Card dealerFirstCard = dealer.getHand().getCards().get(0); // get first card dealer drew
+        
+        System.out.println("Dealer draws one card face up, " + dealerFirstCard.getValue() + " of " + dealerFirstCard.getSuit());
+        System.out.println("Dealer draws one card face down.");
         
         player.playTurn(); // needs implementation in player
 
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
         {
+	    Card dealerSecondCard = dealer.getHand().getCards().get(1); // get second card dealer drew
+            System.out.println("Dealer reveals second card, " + dealerSecondCard.getValue() + " of " + dealerSecondCard.getSuit());
             dealer.playTurn(deck);
         }
 
