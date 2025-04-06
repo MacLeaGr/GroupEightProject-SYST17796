@@ -1,7 +1,5 @@
 package ca.sheridancollege.project;
 
-
-import ca.sheridancollege.project.Hand;
 import java.util.List;
 import java.util.Scanner;
 
