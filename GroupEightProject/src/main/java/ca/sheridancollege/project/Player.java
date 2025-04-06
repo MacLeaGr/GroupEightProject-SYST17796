@@ -92,8 +92,8 @@ public class Player {
                 {
                     System.out.println("Invalid choice.");
                 }
-            scanner.close();
             }
+	    scanner.close();
 	}
 
 	public void split() // user splits into two hands, may play again on both
