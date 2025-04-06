@@ -153,7 +153,7 @@ public class Main{
                 case "view":
                     // view wins
                     // display win count for selected player
-                    System.out.println(activePlayer.getName() + "Has won " + activePlayer.getScore() + "hands!");
+                    System.out.println(activePlayer.getName() + "Has won " + activePlayer.getScore() + " hands!");
                     break;
                 case "quit":
                     // quit
