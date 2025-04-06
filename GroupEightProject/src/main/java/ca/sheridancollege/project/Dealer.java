@@ -41,10 +41,15 @@ public class Dealer extends Player {
         }
     }
         @Override
-	public void playTurn(Deck deck) {
-		while (houseRules.shouldHit(this.hand)) {
+	public void playTurn(Deck deck)
+        {
+            while (houseRules.shouldHit(this.hand))
+            {
                 this.hand.addCard(deck.drawCard());
-        }
+                Card nextCard = hand.getCards().get(hand.getCards().size() - 1);
+                System.out.println("Dealer hits and draws new card, " + nextCard.getValue() + " of " + nextCard.getSuit());
+                System.out.println("Hand Value = " + hand.getHandValue());
+            }
 	}
 
 	public void revealCard() {
