@@ -110,7 +110,6 @@ public class Main{
                     break;
             default:
                 System.out.println("Please enter a valid input");
-                System.out.print(":"); // "Type here" indicator
         }
         
         // start game decision -- play, view wins, quit
@@ -155,7 +154,6 @@ public class Main{
                                     break;
                                 default:
                                     System.out.println("Please enter a valid input");
-                                    System.out.print(":"); // "Type here" indicator
                             }
                         }
                     }
@@ -174,7 +172,6 @@ public class Main{
                     break;
                 default:
                     System.out.println("Please enter a valid input");
-                    System.out.print(":"); // "Type here" indicator
             }
         }
      scanner.close();    
