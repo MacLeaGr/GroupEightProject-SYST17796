@@ -1,7 +1,5 @@
 package ca.sheridancollege.project;
 
-import ca.sheridancollege.project.Deck;
-
 public class Round {
     private HumanPlayer player;
     private Dealer dealer = new Dealer();
