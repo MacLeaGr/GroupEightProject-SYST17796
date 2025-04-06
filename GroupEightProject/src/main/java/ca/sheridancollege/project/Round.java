@@ -27,7 +27,7 @@ public class Round {
         System.out.println("Dealer draws one card face up, " + dealerFirstCard.getValue() + " of " + dealerFirstCard.getSuit());
         System.out.println("Dealer draws one card face down.");
         
-        player.playTurn(); // needs implementation in player
+        player.playTurn(deck); // needs implementation in player
 
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
