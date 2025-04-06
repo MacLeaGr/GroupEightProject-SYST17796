@@ -15,7 +15,6 @@ public class Player {
     		this.splitHand = new Hand();
         }
 
-
 	public String getName() // user is shown player name
         {
             return this.name;
@@ -68,28 +67,33 @@ public class Player {
 
 	public void playTurn(Deck deck) // contains the logic for a player - decision tree of choices
         {
-              Scanner scanner = new Scanner(System.in);
+            Scanner scanner = new Scanner(System.in);
 
-    		while (!hand.isBust())
-              {
-        	   System.out.print(name + ", choose: hit / stand / double: ");
-                   String action = scanner.nextLine();
+            while (!hand.isBust())
+            {
+                System.out.print(name + ", choose: hit / stand / double: ");
+                String action = scanner.nextLine();
 
-                   if (action.equals("hit")) {
-                     hit(deck);
-                  
-		   } else if (action.equals("stand")) {
-                   stand();
-                   break;
-                   
-		   } else if (action.equals("double")) {
-                   doubleDown(deck);
-                   break; // ends turn after double down
-                  
-		   } else {
-                   System.out.println("Invalid choice.");
-                   }
-              }
+                if (action.equals("hit"))
+                {
+                    hit(deck);
+                } 
+                else if (action.equals("stand"))
+                {
+                    stand();
+                    break;
+                } 
+                else if (action.equals("double"))
+                {
+                    doubleDown(deck);
+                    break; // ends turn after double down
+                } 
+                else
+                {
+                    System.out.println("Invalid choice.");
+                }
+            scanner.close();
+            }
 	}
 
 	public void split() // user splits into two hands, may play again on both
