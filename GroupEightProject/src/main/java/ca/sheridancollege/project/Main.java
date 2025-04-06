@@ -24,13 +24,13 @@ public class Main{
         try (InputStream is = Main.class.getClassLoader().getResourceAsStream("Scores.json")) {
             if (is == null) {
                 System.out.println("Warning: Could not read Scores.json file.");
-                jsonNames = "[]"; // fallback to empty array
+                jsonNames = "[]"; // fallback to empty array to remove point of failure
             } else {
                 jsonNames = new String(is.readAllBytes(), StandardCharsets.UTF_8);
             }
         } catch (IOException e) {
             System.out.println("Error reading Scores.json: " + e.getMessage());
-            jsonNames = "[]"; // fallback again
+            jsonNames = "[]"; // fallback again to remove point of failure
         }
         JSONArray names = new JSONArray(jsonNames);
         
