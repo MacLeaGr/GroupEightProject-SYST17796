@@ -10,6 +10,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class Main{
+
+    // create function here to call to save name and score to JSON
     
     public static void main(String[] args) // run game from here
     {
@@ -161,7 +163,7 @@ public class Main{
                     // update list with name and win count, sort list by win count
                     // end program
                     menu = false;
-                    
+                    // call save to JSON function here
                     break;
                 default:
                     System.out.println("Please enter a valid input");
