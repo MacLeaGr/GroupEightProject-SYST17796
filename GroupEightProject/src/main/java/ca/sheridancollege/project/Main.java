@@ -18,6 +18,7 @@ public class Main{
         String input = null;
         HumanPlayer activePlayer = new HumanPlayer(name);
         boolean validName = false;
+        boolean menu = true;
         
         try (InputStream is = Main.class.getClassLoader().getResourceAsStream("Scores.json")) {
             if (is == null) {
@@ -100,13 +101,13 @@ public class Main{
                 
                     break;
             case "quit": // if quit, end program
+                    menu == false;
                     break;
             default:
                 System.out.println("Please enter a valid input");
         }
         
         // start game decision -- play, view wins, quit
-        boolean menu = true;
         while(menu == true)
         {
             System.out.println("Select an Option - Play, view wins, or quit: ");
