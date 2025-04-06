@@ -92,7 +92,7 @@ public class Main{
                         {
                             validName = true;
                             activePlayer.setName(name);
-                            activePlayer.setScore(player.getInt("wins"));
+                            activePlayer.setScore(player.getInt("score"));
                             
                         }
                     }
