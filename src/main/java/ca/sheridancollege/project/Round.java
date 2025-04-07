@@ -34,15 +34,19 @@ public class Round
         dealer.getHand().addCard(deck.drawCard());
         Card dFC = dealer.getHand().getCards().get(0); // get dealer first card
         
+        Card dSC = dealer.getHand().getCards().get(1); // get dealer second card, added at professor's request
+        
         System.out.println("Dealer draws one card face up, " + dFC.getValue() + " of " + dFC.getSuit());
-        System.out.println("Dealer draws one card face down.");
+        // System.out.println("Dealer draws one card face down."); // regular code
+        System.out.println("Dealer draws one card face down."+ dSC.getValue() + " of " + dSC.getSuit()); // dealer card is revealed on professor's request
         
         player.playTurn(deck);
 
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
         {
-            Card dSC = dealer.getHand().getCards().get(1); // get dealer second card
+            // Card dSC = dealer.getHand().getCards().get(1); replaced with overwrite at professor's request
+            dSC = dealer.getHand().getCards().get(1); // get dealer second card
             System.out.println("Dealer reveals second card, " + dSC.getValue() + " of " + dSC.getSuit());
             System.out.println("Dealer Hand Value = " + dealer.hand.getHandValue());
             dealer.playTurn(deck);
