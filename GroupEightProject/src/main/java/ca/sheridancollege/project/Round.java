@@ -19,12 +19,16 @@ public class Round {
 
         player.getHand().addCard(deck.drawCard());
         player.getHand().addCard(deck.drawCard());
-
-        dealer.getHand().addCard(deck.drawCard());
-        dealer.getHand().addCard(deck.drawCard());
-        Card dealerFirstCard = dealer.getHand().getCards().get(0); // get first card dealer drew
+        Card pFC = player.getHand().getCards().get(0); // get player first card
+        Card pSC = player.getHand().getCards().get(1); // get player second card
+                
+        System.out.println("Player is dealt two cards, " + pFC.getValue() + " of " + pFC.getSuit() + ", and " + pSC.getValue() + " of " + pSC.getSuit() );
         
-        System.out.println("Dealer draws one card face up, " + dealerFirstCard.getValue() + " of " + dealerFirstCard.getSuit());
+        dealer.getHand().addCard(deck.drawCard());
+        dealer.getHand().addCard(deck.drawCard());
+        Card dFC = dealer.getHand().getCards().get(0); // get dealer first card
+        
+        System.out.println("Dealer draws one card face up, " + dFC.getValue() + " of " + dFC.getSuit());
         System.out.println("Dealer draws one card face down.");
         
         player.playTurn(deck); // needs implementation in player
@@ -32,8 +36,8 @@ public class Round {
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
         {
-            Card dealerSecondCard = dealer.getHand().getCards().get(1); // get second card dealer drew
-            System.out.println("Dealer reveals second card, " + dealerSecondCard.getValue() + " of " + dealerSecondCard.getSuit());
+            Card dSC = dealer.getHand().getCards().get(1); // get dealer second card
+            System.out.println("Dealer reveals second card, " + dSC.getValue() + " of " + dSC.getSuit());
             System.out.println("Dealer Hand Value = " + dealer.hand.getHandValue());
             dealer.playTurn(deck);
         }
