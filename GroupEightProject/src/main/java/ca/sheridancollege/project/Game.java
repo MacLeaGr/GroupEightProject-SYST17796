@@ -35,8 +35,8 @@ public class Game{
     {
         deck.resetDeck();
         rounds.clear();
-        player.hand.clearHand();
-        dealer.hand.clearHand();
+        player.getHand().clearHand();
+        dealer.getHand().clearHand();
     }
 
     public void printScore() // prints at end of round to show card values to player
