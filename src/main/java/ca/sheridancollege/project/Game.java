@@ -10,10 +10,10 @@ public class Game{
     private List<Round> rounds;
 
 
-    public Game(HumanPlayer player) 
+    public Game(HumanPlayer player, Dealer dealer) 
     {
         this.player = player;
-        this.dealer = new Dealer();
+        this.dealer = dealer;
         this.deck = new Deck();
         this.rounds = new ArrayList<>();
     }
@@ -21,7 +21,7 @@ public class Game{
     public void startGame()
     {
         System.out.println("Starting The Game!!");
-        deck.resetDeck();
+        resetGame();
     }
     
     public void playRound() // initiates round for user to play
@@ -35,6 +35,8 @@ public class Game{
     {
         deck.resetDeck();
         rounds.clear();
+        player.hand.clearHand();
+        dealer.hand.clearHand();
     }
 
     public void printScore() // prints at end of round to show card values to player

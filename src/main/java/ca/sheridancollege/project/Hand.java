@@ -7,47 +7,54 @@ public class Hand {
     
     private List<Card> cards;
 
-    public Hand() {
+    public Hand()
+    {
         this.cards = new ArrayList<>();
     }
 
-    public List<Card> getCards() {
+    public List<Card> getCards()
+    {
         return this.cards;
     }
 
-    public void addCard(Card card) {
+    public void addCard(Card card)
+    {
         cards.add(card);
     }
 
-    public Card removeCard(int location) {
+    public Card removeCard(int location)
+    {
         Card tempCard = cards.get(location);
         cards.remove(location);
         return tempCard;
     }
 
-    public int getHandValue() {
-            
+    public int getHandValue()
+    {
         int total = 0;
         int aceCount = 0;
         
-            for (Card card : cards) {
+            for (Card card : cards)
+            {
                 total += card.getNumValue();
-                if (card.isAce()) { // Check if card is an Ace
+                if (card.isAce())
+                { // Check if card is an Ace
                     aceCount++; // Keep track of aces in hand
                 }
             }
-            
-        
-            while (total > 21 && aceCount > 0) { // If total is over 21 and player/dealer havetwo or more ace, convert them from 11 to 1
-                total -= 10; // Change one ACE from 11 to 1
-                aceCount--;
+            if(aceCount > 0 && (total += aceCount + 10) <= 21)
+            {
+                total += aceCount + 10;
             }
+            else if (aceCount > 0 && (total += aceCount + 10) > 21)
+            {
+                total += aceCount;
+            }
+        return total;
+    }
         
-            return total;
-        }
-        
-    public boolean isBlackJack() { // check for 21, return true or false
-        
+    public boolean isBlackJack()     // check for 21, return true or false
+    {
         if(getHandValue() == 21)
         {
             return true;
@@ -70,7 +77,8 @@ public class Hand {
         }
     }
 
-    public void clearHand() {
+    public void clearHand()
+    {
         cards.clear();
     }
 }

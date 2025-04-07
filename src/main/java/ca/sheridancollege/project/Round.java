@@ -1,7 +1,5 @@
 package ca.sheridancollege.project;
 
-import ca.sheridancollege.project.Deck;
-
 public class Round {
     private HumanPlayer player;
     private Dealer dealer = new Dealer();
@@ -17,24 +15,37 @@ public class Round {
 
     public void startRound() 
     {
+        // Clear the previous round's hands
+        player.getHand().clearHand();
+        dealer.getHand().clearHand();
+        
         System.out.println("Dealing cards!!");
 
         player.getHand().addCard(deck.drawCard());
         player.getHand().addCard(deck.drawCard());
-
-        dealer.getHand().addCard(deck.drawCard());
-        dealer.getHand().addCard(deck.drawCard());
+        Card pFC = player.getHand().getCards().get(0); // get player first card
+        Card pSC = player.getHand().getCards().get(1); // get player second card
+                
+        System.out.println(player.getName() + " is dealt two cards, " + pFC.getValue() + " of " + pFC.getSuit() + ", and " + pSC.getValue() + " of " + pSC.getSuit() );
         
-        player.playTurn(); // needs implementation in player
+        dealer.getHand().addCard(deck.drawCard());
+        dealer.getHand().addCard(deck.drawCard());
+        Card dFC = dealer.getHand().getCards().get(0); // get dealer first card
+        
+        System.out.println("Dealer draws one card face up, " + dFC.getValue() + " of " + dFC.getSuit());
+        System.out.println("Dealer draws one card face down.");
+        
+        player.playTurn(deck);
 
         // If player hasn't busted, dealer plays
         if (!player.getHand().isBust())
         {
+            Card dSC = dealer.getHand().getCards().get(1); // get dealer second card
+            System.out.println("Dealer reveals second card, " + dSC.getValue() + " of " + dSC.getSuit());
+            System.out.println("Dealer Hand Value = " + dealer.hand.getHandValue());
             dealer.playTurn(deck);
         }
-
         printRoundResult();
-        roundNumber++;
     }
 
     // Get the final scores of player and dealer
@@ -45,11 +56,11 @@ public class Round {
 
         if (player.getHand().isBust())
         {
-            System.out.println("Player busts! Dealer wins.");
+            System.out.println("Player busts! Dealer wins with " + dealerHandValue);
 	}
         else if (dealer.getHand().isBust())
         {
-            System.out.println("Dealer busts! Player wins.");
+            System.out.println("Dealer busts! Player wins with " + playerHandValue);
 	}
         else if (playerHandValue > dealerHandValue)
         {
