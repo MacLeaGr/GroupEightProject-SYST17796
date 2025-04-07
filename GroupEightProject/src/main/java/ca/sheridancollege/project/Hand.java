@@ -27,23 +27,26 @@ public class Hand {
 
     public int getHandValue() {
             
-        int total = 0;
+         int total = 0;
         int aceCount = 0;
         
-            for (Card card : cards) {
+            for (Card card : cards)
+            {
                 total += card.getNumValue();
-                if (card.isAce()) { // Check if card is an Ace
+                if (card.isAce())
+                { // Check if card is an Ace
                     aceCount++; // Keep track of aces in hand
                 }
             }
-            
-        
-            while (total > 21 && aceCount > 0) { // If total is over 21 and player/dealer havetwo or more ace, convert them from 11 to 1
-                total -= 10; // Change one ACE from 11 to 1
-                aceCount--;
-            }
-        
-            return total;
+             // Handle Aces: If the total is <= 11, count an Ace as 11 (else count it as 1)
+    for (int i = 0; i < aceCount; i++) {
+        if (total <= 11) {
+            total += 10;  // Add 10 for Ace if total <= 11 (Ace can be counted as 11)
+        }
+    }
+
+    return total;
+
         }
         
     public boolean isBlackJack() { // check for 21, return true or false
