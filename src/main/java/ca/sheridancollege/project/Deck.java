@@ -12,11 +12,6 @@ public class Deck
         this.cards = new ArrayList<>();
     }
 
-    public List<Card> getCards()
-    {
-        return this.cards;
-    }
-
     public Card drawCard() // called to generate a new card and validate that it has not already been drawn
     {   
         Card newCard = null; // empty card is prepared to be overwritten by loop
