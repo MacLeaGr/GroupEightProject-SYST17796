@@ -41,6 +41,11 @@ public class Dealer extends Player {
             Card nextCard = hand.getCards().get(hand.getCards().size() - 1);
             System.out.println("Dealer hits and draws new card, " + nextCard.getValue() + " of " + nextCard.getSuit());
             System.out.println("Hand Value = " + hand.getHandValue());
+            // If the dealer busts, stop drawing and the dealer loses
+        if (hand.getHandValue() > 21) {
+            System.out.println("Dealer busts with hand value: " + hand.getHandValue());
+            break;
+        }
         }
     }
 
