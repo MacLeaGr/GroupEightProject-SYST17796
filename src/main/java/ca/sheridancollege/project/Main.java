@@ -1,10 +1,13 @@
 package ca.sheridancollege.project;
 
 import java.util.Scanner;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -13,7 +16,7 @@ public class Main{
     public static void main(String[] args) // run game from here
     {
         String jsonNames = null;
-        String name = null;
+        String name = "placeholder";
         String input = null;
         HumanPlayer activePlayer = new HumanPlayer(name);
         Dealer dealer = new Dealer();
@@ -21,17 +24,17 @@ public class Main{
         boolean menu = true;
         boolean playAgain = true;
         
-        try (InputStream is = Main.class.getClassLoader().getResourceAsStream("Scores.json")) {
-            if (is == null) {
-                System.out.println("Warning: Could not read Scores.json file.");
-                jsonNames = "[]"; // fallback to empty array to remove error
-            } else {
-                jsonNames = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-            }
-        } catch (IOException e) {
-            System.out.println("Error reading Scores.json: " + e.getMessage());
-            jsonNames = "[]"; // fallback again to remove error
+        try
+        {
+            byte[] bytes = Files.readAllBytes(Paths.get("Scores.json")); // find path to JSON
+            jsonNames = new String(bytes, StandardCharsets.UTF_8);
         }
+        catch (IOException e)
+        {
+            System.out.println("Error reading Scores.json: " + e.getMessage());
+            jsonNames = "[]"; // fallback to empty array
+        }
+        
         JSONArray names = new JSONArray(jsonNames);
         
         Scanner scanner = new Scanner(System.in); // scannner for user input
@@ -74,6 +77,11 @@ public class Main{
                         validName = true;
                         activePlayer.setName(name);
                         activePlayer.setScore(0);
+                        
+                        JSONObject newPlayer = new JSONObject();
+                        newPlayer.put("name", name);
+                        newPlayer.put("score", 0);
+                        names.put(newPlayer);
                     }
                     else
                     {
@@ -109,6 +117,7 @@ public class Main{
             case "quit" ->     // if quit, end program
             {
                 menu = false;
+                saveToJSON(names);
                 break;
             }
             default -> System.out.println("Please enter a valid input");
@@ -141,6 +150,7 @@ public class Main{
                 case "play" ->
                 {
                     boolean playGame = true;
+                    playAgain = true;
                     // play
                     // import player name and wins, new dealer, new deck, new rounds, start round
                     // round plays out
@@ -154,6 +164,16 @@ public class Main{
                         while(playAgain == true) // game process within this while loop
                         {
                             game.playRound();
+                            
+                            for (int i = 0; i < names.length(); i++)
+                            {
+                                JSONObject player = names.getJSONObject(i);
+                                if (player.getString("name").equals(activePlayer.getName()))
+                                {
+                                    player.put("score", activePlayer.getScore()); // Update score
+                                    break;
+                                }
+                            }
                             
                             System.out.println("Play Again? Please Enter YES or NO"); // after round ends, loop to play again, break loop to return to menu
                             System.out.print(":");
@@ -186,11 +206,25 @@ public class Main{
                     // update list with name and win count, sort list by win count
                     // end program
                     menu = false;
+                    saveToJSON(names);
                     break;
                 }
                 default -> System.out.println("Please enter a valid input");
             }
         }
-     scanner.close();    
+        scanner.close();    
+    }
+    
+    public static void saveToJSON(JSONArray toSave) // save to json in project root
+    {
+        try (FileWriter file = new FileWriter("Scores.json"))
+        {
+            file.write(toSave.toString(4));
+            file.flush();
+        }
+        catch (IOException e)
+        {
+            System.out.println("Error saving Scores.json: " + e.getMessage());
+        }
     }
 }
