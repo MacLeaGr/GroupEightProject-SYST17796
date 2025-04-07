@@ -15,6 +15,9 @@ public class Round {
 
     public void startRound() 
     {
+        // Clear the previous round's hands
+        player.getHand().clearHand();
+        dealer.getHand().clearHand();
         System.out.println("Dealing cards!!");
 
         player.getHand().addCard(deck.drawCard());
