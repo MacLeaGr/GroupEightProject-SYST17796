@@ -10,7 +10,7 @@ public class Game{
     private List<Round> rounds;
 
 
-    public Game(HumanPlayer player, Dealer dealer) 
+    public Game(HumanPlayer player) 
     {
         this.player = player;
         this.dealer = new Dealer();
