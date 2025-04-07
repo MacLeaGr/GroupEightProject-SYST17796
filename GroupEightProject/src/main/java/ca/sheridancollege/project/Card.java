@@ -34,7 +34,7 @@ public class Card {
                 case "FIVE":
                     this.numValue = 5;
                     break;
-                case "IX":
+                case "SIX":
                     this.numValue = 6;
                     break;
                 case "SEVEN":
