@@ -51,11 +51,6 @@ public class Player {
 		
            System.out.println(name + " hits, new card: " + newCard.getValue() + " of " + newCard.getSuit());
            System.out.println("Hand value is now: " + hand.getHandValue());
-
-    		if (hand.isBust()) 
-		{
-        	System.out.println(name + " busts!");
-		}
 	}
 
 	public void doubleDown(Deck deck) 
@@ -94,7 +89,6 @@ public class Player {
                     System.out.println("Invalid choice.");
                 }
             }
-	    scanner.close();
 	}
 
 	public void split() // user splits into two hands, may play again on both
