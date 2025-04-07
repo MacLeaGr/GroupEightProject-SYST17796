@@ -1,0 +1,22 @@
+[
+    {
+        "score": 1000,
+        "name": "admin"
+    },
+    {
+        "score": 0,
+        "name": "guest"
+    },
+    {
+        "score": 99,
+        "name": "graham"
+    },
+    {
+        "score": 99,
+        "name": "juan"
+    },
+    {
+        "score": 99,
+        "name": "neo"
+    }
+]

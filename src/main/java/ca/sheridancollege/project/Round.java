@@ -1,10 +1,12 @@
 package ca.sheridancollege.project;
 
-public class Round {
+public class Round
+{
     private HumanPlayer player;
     private Dealer dealer = new Dealer();
     private Deck deck = new Deck();
-    private int roundNumber;
+    private int numWins = 0;
+    private int doubleScore = 0;
 
     public Round(HumanPlayer player, Dealer dealer, Deck deck) 
     {
@@ -53,6 +55,14 @@ public class Round {
     {	
         int playerHandValue = player.getHand().getHandValue();
         int dealerHandValue = dealer.getHand().getHandValue();
+        if(player.getDouble()) // if player doubled down returns true
+        {
+            doubleScore = 2;
+        }
+        else
+        {
+            doubleScore = 1;
+        }
 
         if (player.getHand().isBust())
         {
@@ -61,10 +71,12 @@ public class Round {
         else if (dealer.getHand().isBust())
         {
             System.out.println("Dealer busts! Player wins with " + playerHandValue);
+            numWins += doubleScore; // if player wins, doubleScore is added
 	}
         else if (playerHandValue > dealerHandValue)
         {
             System.out.println("Player wins with " + playerHandValue);
+            numWins += doubleScore; // if player wins, doubleScore is added
 	}
         else if (dealerHandValue > playerHandValue)
         {
@@ -74,5 +86,10 @@ public class Round {
         {
             System.out.println("It's a tie!");
         }
+    }
+    
+    public int getNumWins()
+    {
+        return this.numWins;
     }
 }

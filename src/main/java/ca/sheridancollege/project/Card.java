@@ -1,6 +1,7 @@
 package ca.sheridancollege.project;
 
-public class Card {
+public class Card
+{
     private String suit;
     private String value; // face value ("ACE, FIVE, KING etc.)
     private int numValue; // number value ("6, 2, 10 etc.)
@@ -19,40 +20,19 @@ public class Card {
             
         switch(value) // switch statement to assign a integer value to each card generated
         {
-            case "ACE":
-                this.numValue = 0; // aces value assigned per ace in hand later
-                break;
-            case "TWO":
-                this.numValue = 2;
-                break;
-            case "THREE":
-                this.numValue = 3;
-                break;
-            case "FOUR":
-                this.numValue = 4;
-                break;
-            case "FIVE":
-                this.numValue = 5;
-                break;
-            case "SIX":
-                this.numValue = 6;
-                break;
-            case "SEVEN":
-                this.numValue = 7;
-                break;
-            case "EIGHT":
-                this.numValue = 8;
-                break;
-            case "NINE":
-                this.numValue = 9;
-                break;
-            case "TEN":     // TEN - KING will all have a value of 10, so that is reflected here
-            case "JACK":
-            case "QUEEN":
-            case "KING":
+            case "ACE" -> this.numValue = 1; // aces value modified to 11 later as necessary
+            case "TWO" -> this.numValue = 2;
+            case "THREE" -> this.numValue = 3;
+            case "FOUR" -> this.numValue = 4;
+            case "FIVE" -> this.numValue = 5;
+            case "SIX" -> this.numValue = 6;
+            case "SEVEN" -> this.numValue = 7;
+            case "EIGHT" -> this.numValue = 8;
+            case "NINE" -> this.numValue = 9;
+            case "TEN", "JACK", "QUEEN", "KING" -> // TEN - KING will all have a value of 10, so that is reflected here
                 this.numValue = 10;
-                break;
         }
+        // TEN - KING will all have a value of 10, so that is reflected here
         this.ace = "ACE".equals(this.value); // set boolen "ace" to true or false
     }
 

@@ -59,9 +59,4 @@ public class Dealer extends Player
             }
         }
     }
-
-    public void revealCard()
-    {
-        System.out.println("Dealer reveals: " + this.hand.toString());
-    }
 }

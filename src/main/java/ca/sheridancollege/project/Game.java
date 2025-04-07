@@ -3,12 +3,12 @@ package ca.sheridancollege.project;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game{
+public class Game
+{
     private HumanPlayer player;
     private Deck deck;
     private Dealer dealer;
     private List<Round> rounds;
-
 
     public Game(HumanPlayer player, Dealer dealer) 
     {
@@ -29,6 +29,7 @@ public class Game{
         Round round = new Round(player, dealer, deck);
     	rounds.add(round);
     	round.startRound();
+        player.setScore(player.getScore() + round.getNumWins());
     }
 
     public void resetGame() // clears deck and number of rounds for next game
@@ -37,11 +38,5 @@ public class Game{
         rounds.clear();
         player.hand.clearHand();
         dealer.hand.clearHand();
-    }
-
-    public void printScore() // prints at end of round to show card values to player
-    {
-        System.out.println(player.getName() + " has: " + player.hand.getHandValue());
-        System.out.println("Dealer has: " + dealer.hand.getHandValue());
     }
 }
